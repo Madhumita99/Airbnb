@@ -1,5 +1,8 @@
+  body{
+    background-color: #fffaf4;
+  }
   .navbar-brand{
-    font-size: 35px; 
+    font-size: 45px; 
     font-weight: bolder; 
     color:#996515;
   }
@@ -20,7 +23,7 @@
   }
   th {
       background-color: #f0dc82;
-      color: white;
+      color: #996515;
       text-align: left;
       padding: 13px;
       border-bottom: 1px solid #daa520;
@@ -78,7 +81,8 @@
     padding-left: 50px;
     padding-right: 50px;
     text-align: justify;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
   } 
   .price-per-night {
     font-weight: normal;
@@ -88,6 +92,8 @@
     text-align: left;
     font-size: large;
     padding-bottom: 25px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
   }
   .dates{
     color: gray;
@@ -96,6 +102,8 @@
     padding-right: 50px;
     text-align: left;
     font-size: larger;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
   }
   .left-side-footer {
     padding-top: 15px;
