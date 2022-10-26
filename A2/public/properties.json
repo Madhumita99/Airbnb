@@ -1,0 +1,32 @@
+[
+    {
+        "title":"Spacious Gulf front home w/ spectacular sunrise & sunset views!",
+        "description":"This spacious, custom-built beach house is ready to be your next getaway at the Gulf. Located directly on the beach, this home features designer furnishings throughout, four bedrooms and baths, a fabulous great room with a 65 inch flatscreen TV, and a gourmet kitchen with stainless steel appliances, a granite island, and a breakfast bar.",
+        "nightlyFee":"$420 per night",
+        "cleaningFee":"$302",
+        "serviceFee":"$398",
+        "amenities":"Bathtub, Hairdryer, Shampoo, Hot Water, Washer, Dryer, Essentials, Iron, TV, Air Conditioning, Smoke Alarm, Fire Extinguisher, First Aid Kit, Wifi, Kitchen, Refrigerator, Microwave, Dishes and silverware, Stove, Oven, Patio, Oven grill, Lockbox",
+        "longTermStays": "Allowed",
+        "bedrooms":"4",
+        "guests":"7",
+        "reviews":"23 reviews",
+        "available":true,
+        "dates": "Nov 13-18",
+        "additional":"Great Location, Great Check-in experience, Self check-in"
+    },
+    {
+        "title":"Lake front cabin, boat dock and stunning lake view",
+        "description":"This spacious log home located on beautiful Lake Granbury looks like it came straight out of a magazine! Spend time on the private boat dock fishing and relaxing or bring your own boat. Enjoy breathtaking views of the lake from one of the oversized porches and enjoy all of the amenities and details this cabin offers.",
+        "nightlyFee":"$465 per night",
+        "cleaningFee":"$150",
+        "serviceFee":"$349",
+        "amenities":"Bathtub, Hairdryer, Shampoo, Hot Water, Washer, Dryer, Essentials, Iron, TV, Air Conditioning, Smoke Alarm, Fire Extinguisher, First Aid Kit, Wifi, Kitchen, Refrigerator, Microwave, Dishes and silverware, Stove, Oven, Patio, Oven grill, Lockbox",
+        "longTermStays": "Allowed",
+        "bedrooms":"3",
+        "guests":"6",
+        "reviews":"12 reviews",
+        "available":true,
+        "dates": "Nov 4-9",
+        "additional":"Great Location, Great Check-in experience, Self check-in"
+    }
+]
