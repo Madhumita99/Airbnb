@@ -78,6 +78,8 @@
   }
   .description {
     font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 50px;
     padding-right: 50px;
     text-align: justify;
@@ -94,6 +96,21 @@
     padding-bottom: 25px;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     font-size: 15px;
+  }
+  .price {
+    font-weight: normal;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+    font-size: larger;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
+  }
+  .makeBold {
+    font-weight: bolder;
+    font-size: 1.1em;
+    color: black;
   }
   .dates{
     color: gray;
