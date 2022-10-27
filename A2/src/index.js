@@ -51,7 +51,9 @@ const PropertiesTable = (props) => {
 
     props.properties.forEach((product) => {
         if (product.title.indexOf(filterText) === -1) {
-          return;
+          if (product.location.indexOf(filterText) === -1) {
+            return;
+          }
         }
         if (inStockOnly && !product.available) {
           return;
@@ -83,11 +85,11 @@ const SearchBar = (props) => {
     
     return (
         <form>
-          <input type="text" placeholder="Search..." value={props.filterText} onChange={handleFilterTextChange}/>
+          <input type="text" placeholder="Search..." value={props.filterText} onChange={handleFilterTextChange} style={{marginBottom: '10px'}}/>
           <br></br>
           <input type="checkbox" checked={props.inStockOnly} onChange={handleInStockChange}/>
             {' '}
-            Only show available video list
+            Show available properties
           
           <hr ></hr>
         </form>
