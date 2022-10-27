@@ -1,6 +1,9 @@
 [
     {
         "title":"Spacious Gulf front home w/ spectacular sunrise & sunset views!",
+        "city":"Gulf Shores",
+        "state":"Alabana",
+        "country":"United States",
         "location":"Gulf Shores, Alabana, United States",
         "photo":"photos/img1.jpg",
         "description":"This spacious, custom-built beach house is ready to be your next getaway at the Gulf. Located directly on the beach, this home features designer furnishings throughout, four bedrooms and baths, a fabulous great room with a 65 inch flatscreen TV, and a gourmet kitchen with stainless steel appliances, a granite island, and a breakfast bar.",
@@ -18,6 +21,9 @@
     },
     {
         "title":"Naturalist Boudoir",
+        "city":"Lumberton",
+        "state":"Texas",
+        "country":"United States",
         "location":"Lumberton, Texas, United States",
         "photo":"photos/img2.jpg",
         "description":"Nestled in the heart of the Big Thicket, our Naturalist Boudoir B&B has everything you need to revitalize your senses.  Extremely private area for the naturalist with outdoor hot tub and shower.  We welcome all guests to experience our lovely Naturalist Boudoir & reconnect with your special someone.",
@@ -35,6 +41,9 @@
     },
     {
         "title":"Hygge Hideaway",
+        "city":"Broken Bow",
+        "state":"Oklahoma",
+        "country":"United States",
         "location":"Broken Bow, Oklahoma, United States",
         "photo":"photos/img3.jpg",
         "description":"Welcome to the brand new Hygge Hideaway! As soon as you drive up, you'll see that that this lakefront cabin sits right next to our very own Pine Lake and is all about unplugging and getting back to the simple, enjoyable moments that make life grand. Hygge Hideaway greets you with an airy, open floor plan interspersed with nature-inspired design choices and whimsical decor––hinting that you should let out your inner cabin life state of mind and let yourself be charmed into instant vacation mode!",
@@ -52,6 +61,9 @@
     },
     {
         "title":"Private Butte Views, Perfect Proximity to CB & Mtn",
+        "city":"Crested Butte",
+        "state":"Colorado",
+        "country":"United States",
         "location":"Crested Butte, Colorado, United States",
         "photo":"photos/img4.jpg",
         "description":"Longing for a spacious place to enjoy fresh mountain air and dark star-filled skies? Welcome to our updated 4 Bdrm, 3.5 Bath mountain home with plenty of room for the whole family and conveniently located right between downtown and the ski resort (4 min drive to each). Come take in the expansive and unobstructed views of both the butte and CB valley while sipping coffee on the massive deck or while soaking in the brand-new hot tub after a day on the slopes or on the adjacent Nordic Trail.",
