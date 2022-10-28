@@ -20,7 +20,6 @@ const PropertiesRow = (props) => {
         
         <div className="heading-segment">{ name }</div>
         <div className="dates">{ properties.reviews} ; <u>{properties.location}</u></div>
-          <div className="description">{ properties.description }</div>
           <div className="dates">{ properties.dates }</div>
           <div className="price-per-night">{ properties.nightlyFee }</div>
           {showResults ? <DetailsRow properties={properties}/> : null}
@@ -34,6 +33,7 @@ const DetailsRow = (props) => {
 
     return (
       <div>
+        <div className="description">{ properties.description }</div>
         <div className="description"><span className="makeBold">Amenities: </span>{ properties.amenities }</div>
         <div className="price"><span className="makeBold">Bedrooms: </span><span className="dates">{ properties.bedrooms }</span><span className="makeBold">Guests: </span><span className="dates">{ properties.bedrooms }</span></div>
         <div className="price"><span className="makeBold">Cleaning fee: </span><span className="dates">{ properties.cleaningFee }</span></div>
