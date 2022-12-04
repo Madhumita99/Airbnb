@@ -1,0 +1,11 @@
+[
+    {
+	    "name": "Madhumita Ramesh",
+	    "age": 23,
+	    "contactNumber": "4698806290",
+	    "email": "madhumita.ramesh0205@gmail.com",
+	    "isHost": true,
+	    "reservations": ["637419dfe0b2fc027b9bb8d2","637419dfe0b2fc027b9bb8d3","637419dfe0b2fc027b9bb8d4", "637419dfe0b2fc027b9bb8d5", "637419dfe0b2fc027b9bb8d6", "637419dfe0b2fc027b9bb8d7"],
+	    "favorites": ["63696cb29e76b81551da1cb1","63696cb29e76b81551da1cb2","63696cb29e76b81551da1cb3", "63696cb29e76b81551da1cb4"]
+    }
+]
