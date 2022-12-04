@@ -1,0 +1,117 @@
+  body{
+    background-color: #fffaf4;
+  }
+  .navbar-brand{
+    font-size: 45px; 
+    font-weight: bolder; 
+    color:#996515;
+  }
+  .nav-link {
+    color:#996515;
+  }
+  .side-section {
+    padding: 20px;
+  }
+  tr {
+    border: 1px solid #dedede;
+  }
+  table {
+      width: 100%;
+      margin-top: 30px;
+      border: 1px solid #dedede;
+      border-radius: 20px;
+  }
+  th {
+      background-color: #f0dc82;
+      color: #996515;
+      text-align: left;
+      padding: 13px;
+      border-bottom: 1px solid #daa520;
+      padding: 10px; 
+  }
+  td {
+      background-color: white;
+      color: #daa520;
+      text-align: left;
+      padding: 13px;
+      border: 1px solid #dedede;
+  }
+  td:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .text-center {
+    padding-bottom: 30px;
+  }
+  .main-section:hover {
+    border-radius: 5px;
+    border: 1px solid #daa520;
+    cursor: pointer;
+  }
+  img{
+    padding-right: 5px;
+  }
+  .filter {
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #daa520;
+    margin: 0;
+    padding: 7px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .acco {
+    width: 450px;
+    height:250px;
+    margin-top: 60px; 
+    border-radius: 10px;
+  }
+  .heading-segment{
+    font-weight: bolder; 
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  }
+  .description {
+    font-weight: normal;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: justify;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
+  } 
+  .price-per-night {
+    font-weight: normal;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+    font-size: large;
+    padding-bottom: 25px;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
+  }
+  .dates{
+    color: gray;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+    font-size: larger;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    font-size: 15px;
+  }
+  .left-side-footer {
+    padding-top: 15px;
+    padding-left: 10px;
+    float: left;
+  }
+  .right-side-footer {
+    padding-top: 15px;
+    padding-right: 10px;
+    float: right;
+  }
