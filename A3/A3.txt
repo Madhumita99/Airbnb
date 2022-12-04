@@ -1,0 +1,112 @@
+Users collection 
+{
+	"id": 5349b4ddd2781d08c09890f4 -> objectID
+	"name": "XYZ" -> String
+	"age": 23 -> Int
+	"contactNumber": "xxxxxxxxxxx" -> String
+	"email": "example@gmail.com"-> String
+	"isHost: true -> Boolean
+	"reservations": [reservation_id1,reservation_id2,reservation_id3.....] -> list of object ids referencing to the Reservations collection
+	"favorites": [property_id1,property_id2,property_id3.....] -> list of object ids referencing to the Properties collection
+}
+
+Host collection 
+{
+	"id": 6593nfddd2781d08c56fh7f4 -> objectID
+	"userId": 4549b4ddd2781d08c098956t9 -> ObjectId (reference to the user table)
+	"addProperty": true -> Boolean
+	"updateProperty": true -> Boolean
+	"deleteProperty": true -> Boolean
+	"propertiesOwned": [property_id1,property_id2,property_id3.....] -> list of object ids referencing to the Properties collection
+}
+
+Reservations Collection
+{
+	"id": 8349b4dcc75781d08c098g9 -> objectId
+	"transactionId": 8349b4dcc75781d08c098g9 -> objectId
+	"propertyId": 5349b4ddd2781d08c09890f4 -> objectId (reference to the property table)
+	"userId": 4549b4ddd2781d08c098956t9 -> objectId (reference to the user table)
+	"startDate": 18-11-2022 -> Date()
+	"endDate": 23-11-2022 -> Date()
+	"bookingDate": 2-11-2022 -> Date()
+	"cancelDate": 19-4-2022 -> Date()
+	"pricePerDay": 144.66 -> Double
+	"pricePerStay": 555.44 -> Double 
+	"taxPaid": 555.44 -> Double 
+	"amountPaid": 555.44 -> Double 
+	"paymentDone": true -> Boolean 
+	"isRefund": true -> Boolean
+	"refundPaid": 555.44 -> Double
+	"effectiveAmt": 555.44 -> Double
+}
+
+Properties collection
+{
+	"id": 7349b4dddafs1d08c098904c -> objectId
+	"title": "Hotel something" -> String
+	"description": "lorem picsum ...." -> String 
+	"latitude": 32.67589 -> Double
+	"longitude": 67.426890 -> Double
+	"country: "United States" -> String
+	"state:" "United States" -> String
+	"nightlyCost": 144.66 -> Double
+	"cleaningFee": 155.44 -> Double 
+	"serviceFee": 755.33 -> Double
+	"ameneties": [amenities_id1,amenities_id2,amenities_id3.....] -> list of object ids referencing to the Amenities collection
+	"bedrooms": 5 -> int
+	"guests": 7 -> int
+	"reviews": 23 -> int
+	"availableStartDate": 18-11-2022 -> Date()
+	"availableEndDate": 23-11-2022 -> Date()
+	"longTermStayAllowed": true -> Boolean()
+	"additional": [additional_id1,additional_id2,additional_id3.....] -> bject ids referencing to the Additional collection
+	"reservations": [reservation_id1,reservation_id2,reservation_id3.....] -> list of object ids referencing to the Reservations collection
+	
+}
+
+Reviews collection
+{
+	"id": 7349b4dddafs1d08c098904c -> objectId
+	"propertyId": 5349b4ddd2781d08c09890f4 -> objectId (reference to the property table)
+	"userId": 4549b4ddd2781d08c098956t9 -> objectId (reference to the user table)
+	"reservationId": 8349b4dcc75781d08c098g9 -> objectId (reference to the reservation table)
+	"comment": "This is a good place ...." -> String
+	"rating": 5 -> int
+	"created": 2-11-2022 -> Date()
+	"modified": 19-4-2022 -> Date()
+}
+
+Transactions collection
+{
+	
+	"id": 7349b4dddafs1d08c098904c -> objectId
+	"propertyId": 5349b4ddd2781d08c09890f4 -> objectId (reference to the property table)
+	"receiverId": 4549b4ddd2781d08c098956t9 -> objectId (reference to the user table)
+	"payeeId": 4549b4ddd2781d08c098956t9 -> objectId (reference to the user table)
+	"reservationId": 8349b4dcc75781d08c098g9 -> objectId (reference to the reservation table)
+	"amount": 555.44 -> Double
+	"transferOn": 18-11-2022 -> Date()
+	"promoId": "MGY0924682" -> String
+	"amount": 90.00 -> Double
+	"created": 2-11-2022 -> Date()
+	"modified": 19-4-2022 -> Date()
+}
+
+Amenities collection
+{
+	"id": 4hr5kdddda5h3k58c098904c -> objectId
+	"name": "XYZ" -> String
+	"iconImage": "img1.png" -> File
+	"created": 2-11-2022 -> Date()
+	"modified": 19-4-2022 -> Date()
+}
+
+Additional collection
+{
+	"id": 6382jrddda5h3k56gh78904c -> objectId
+	"name": "XYZ" -> String
+	"iconImage": "img1.png" -> File
+	"description": "xyz...." -> String
+	"created": 2-11-2022 -> Date()
+	"modified": 19-4-2022 -> Date()
+}
