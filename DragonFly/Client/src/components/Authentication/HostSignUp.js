@@ -1,141 +1,124 @@
-import React, {useState, useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
+import React,{useState, useEffect} from "react";
+import { Link,useNavigate } from 'react-router-dom';
 
-function HostSignUp()  {
-  const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(false);
-  const [flag, setFlag] = useState(false);
-  let navigate = useNavigate();
+	function HostSignUp(){
+		let navigate = useNavigate();
+		  const[data, setUser] = useState({
+			username:'',
+			  email:'',
+			  password:''
+		  })
+		  const[formErrors, setFormErrors] = useState({});
+		  const[isSubmit, setIsSubmit] = useState(false);
+	  
+	  
+		  let name,value;
+		  const updateValue = (e)=>{
+			name=e.target.name;
+			value=e.target.value;
+			setUser({...data, [name]:value})
+		  } 
+	  
+		  const submitData = async (e) => {
+			  e.preventDefault();
+			  setFormErrors(validate(data));
+			  const dataUser = {
+				username: data.username,
+				  email: data.email,
+				  password: data.password
+				  
+			  }
+        console.log(dataUser);
+			  const res = await fetch("http://localhost:3000/hostregister",{
+				  method:'POST',
+				  headers : { 
+					  'Content-Type': 'application/json',
+					   'Accept': 'application/json'
+					},
+				  body:JSON.stringify(dataUser)
+			  });
 
-  useEffect( () =>{
-    document.getElementById('submit').onclick = function() {
-            var name = document.getElementById('name').value
-              var em = document.getElementById('email').value
-              var pass = document.getElementById('password').value
-              var phone = document.getElementById('phone').value
-              var img = document.getElementById('image').value
-              var loc = document.getElementById('location').value
-              var about = document.getElementById('aboutme').value
-              var details = document.getElementById('details').value
-            console.log(JSON.stringify( {  // you will get user information from login form
-                name: name,
-                email: em,
-                hsignuppswd: pass,
-                phoneNo: phone,
-                image: img,
-                location: loc,
-                aboutMe: about,
-                details: details
-      
-              } ))
-              console.log('Host signup form submitted succesfully')
-              fetch('http://localhost:3000/hostregister', {
-                method: "POST",
-                body: JSON.stringify( {  // you will get user information from login form
-                    name: name,
-                    email: em,
-                    hsignuppswd: pass,
-                    phoneNo: phone,
-                    image: img,
-                    location: loc,
-                    aboutMe: about,
-                    details: details
-                  } ),
-                headers : { 
-                  'Content-Type': 'application/json',
-                   'Accept': 'application/json'
-                }
-              })
-              .then( res => res.json() )
-              .then( (data) => {
-                  if(data.mess === "exists")
-                  {
-                      alert('Host already exists. Try a different email address')
-                  }
-                  else if(data.mess === "blank")
-                  {
-                      alert('Please fill all fields')
-                  }
-        
-                  
-              })
-              .catch((error) => {
-                console.log(error.message);
-              
-              });
-          }
-  }, [])
+			  const usr = await res.json();
+			  console.log("usr status = "+usr.status)
+			  if(res.status === 422 || !usr){
+				window.alert("Invalid registration");
+			  }
+			  else if(res.status === 425){
+				  window.alert("Host already exists. Please login!");
+				  navigate('/hostlogin');
+			  }
+			  else{
+				window.alert("Registration successful");
+				navigate('/hostlogin');
+			  }
+			  
+		  }
+	  
+		  useEffect(() => {
+			console.log(formErrors);
+			if(Object.keys(formErrors).length === 0 && isSubmit){
+			  console.log(data);
+			}
+		  },[formErrors]);
+	  
+		  const validate = (values) => {
+			const errors = {};
+			const regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{5,})"); 
+			if (!values.username) {
+			  errors.username = "Name is required!";
+			}
+			if (!values.email) {
+			  errors.email = "Email is required!";
+			}
+			if(!regex.test(values.password)){
+			  errors.password = "Password min. length 5 and include at least 1 uppercase and lowercase letter, 1 number and 1 special character!";
+			  setIsSubmit(false);
+			}
+			if (!values.password) {
+				errors.password = "Password is required!";
+			  }
+			return errors;
+		  };
+		 
+		  return(
+			  <div>
+          <div className="d-flex justify-content-center">
+					  <div className="card" style={{marginTop: '15px', marginBottom: '15px'}}>
+					  <div className="card-body">
+						  <div>
+							  <h3 className="card-title">Host Sign Up</h3>
+                <form>
+                <div className="form-inline">
+								  
+								  Name: <input id="username" className="form-control" name="username" value={data.username} onChange = {updateValue}  type="text"/><br />
+					  			  <span>{formErrors.username}</span>
+							  </div>
+							  
+							  <div className="form-inline">
+								  
+								  	Email: <input id="email" className="form-control" name="email" value={data.email} onChange = {updateValue}  type="text"/><br />
+					  				<span>{formErrors.email}</span>
+							  </div>
+							  
+							  <div className="form-inline">
+								  
+								  	Password: <input id="password" className="form-control" name="password" value={data.password} onChange = {updateValue}   type="password"/><br />
+					  				<span>{formErrors.password}</span>
+							  </div>
+							  
+							  <div className="login-button">
+							  		<button className="btn btn-primary" onClick={submitData}>Submit</button>
+							  </div>
+							  Already have an account? <Link to="/hostlogin">Login</Link>
+                </form>
+						  </div>
+					  </div>
+					  </div>
+					  </div>
+			  </div>
+		  )
+	  }
+	  
 
-      if (isLoading){
-        return(
-          <div>Loading...</div>
-
-        );
-
-      }
-      else if (error){
-        return(
-          <div>Error: {error.message }</div>
-
-        );
-      }
-      else{
-        if(flag === false)
-        {
-            return (
-            <div>
-                <div class="d-flex justify-content-center">
-
-        <div class="card" style={{marginTop: '15px', marginBottom: '15px'}}>
-            <div class="card-body">
-              <h5 class="card-title" >Host signup</h5>
-
-              <form>
-                <div class="form-inline">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter your name" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                  </div>
-                <div class="form-inline">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-                <div class="form-inline">
-                  <label for="password">Password:</label>
-                  <input type="password" class="form-control" id="password" placeholder="Enter password" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-                <div class="form-inline">
-                    <label for="password">Phone:</label>
-                    <input type="number" class="form-control" id="phone" placeholder="Enter your phone" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-                <div class="form-inline">
-                    <label for="image">Image:</label>
-                    <input type="file" class="form-control" id="image" placeholder="Upload your photo" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-                <div class="form-inline">
-                    <label for="location">Location:</label>
-                    <input type="text" class="form-control" id="location" placeholder="Enter location" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-                <div class="form-inline">
-                    <label for="details">Details:</label>
-                    <input type="text" class="form-control" id="details" placeholder="Enter details" style={{marginTop: '5px', marginBottom: '5px'}}/>
-                </div>
-
-                <button type="submit" id ="submit" class="btn btn-primary" style={{marginTop: '15px', marginBottom: '15px'}}>Submit</button>
-              </form>
-            </div>
-          </div>
-
-
-    </div>  
-            </div> 
-  
-        );}
-        else{
-            navigate("/welcome")
-        }
-
-      }
-  
-}
 
 export default HostSignUp;
