@@ -1,26 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropertiesAll from './PropertiesAll';
 import './external.css';
 
-function Properties() {
-    let navigate = useNavigate();
-    function Logout() {
-        localStorage.removeItem('user')
-        navigate(`/`)
-    }
-    function show() {
-        navigate(`/reservations`)
-    }
+function Home() {
     return (
         <div>
             <div id="root">
                 <div className="container-fluid text-center" style={{marginTop: '30px'}}>
                     <div className="row">
                         <div className="col-md-2 side-section">
-                        <button type='button' id="logout" onClick = {Logout}>Logout</button>
-                        <button type="button" onClick={show} style={{marginTop: '10px'}}>Show Reservations</button>
                             <table>
                                 <thead>
                                     <tr className="table-info">
@@ -107,4 +96,4 @@ function Properties() {
         </div>
     )
 }
-export default Properties;
+export default Home;

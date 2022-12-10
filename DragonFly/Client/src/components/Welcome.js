@@ -1,17 +1,25 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PropertiesAll from './PropertiesAll';
+import HostPropertiesAll from './HostPropertiesAll';
 import './external.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function Welcome() {
+    let navigate = useNavigate();
+    function Logout() {
+        localStorage.removeItem('user')
+        navigate(`/`)
+    }
     return (
         <div>
             <div id="root">
                 <div className="container-fluid text-center" style={{marginTop: '30px'}}>
                     <div className="row">
                         <div className="col-md-2 side-section">
-                            <Link to={"/addProperty"}><button className="btn btn-primary" style={{marginTop: '15px', marginBottom: '15px', width: '110px', height: '60px'}}>Add a property</button></Link>
+                        <div>
+                        <button type='button' id="logout" onClick = {Logout}>Logout</button>
+                        </div>
+                            <Link to={"/addProperty"}><button type='button' style={{marginTop: '15px', marginBottom: '15px', width: '110px', height: '60px'}}>Add a property</button></Link>
                             <table>
                                 <thead>
                                     <tr className="table-info">
@@ -88,7 +96,7 @@ function Welcome() {
                         <div className="col-md-10">
                             <div className="container-fluid" style={{marginTop: '30px'}}>
                                 <div className="main">
-                                    <PropertiesAll />
+                                    <HostPropertiesAll />
                                 </div>
                             </div>
                         </div>
